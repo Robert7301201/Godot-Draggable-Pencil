@@ -3,17 +3,15 @@
 [ext_resource path="res://Pencil.png" type="Texture" id=1]
 [ext_resource path="res://Hand.gd" type="Script" id=2]
 
-[sub_resource type="RectangleShape2D" id=2]
+[sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 512, 12 )
 
 [node name="World" type="Node2D"]
 
-[node name="GrooveJoint2D" type="GrooveJoint2D" parent="."]
+[node name="PinJoint2D" type="PinJoint2D" parent="."]
 position = Vector2( 512, 122 )
 node_a = NodePath("../Hand")
 node_b = NodePath("../Pencil")
-length = 1.0
-initial_offset = 1.0
 
 [node name="Pencil" type="RigidBody2D" parent="."]
 position = Vector2( 512, 200 )
@@ -33,7 +31,7 @@ position = Vector2( 512, 610 )
 mode = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Floor"]
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 
 [node name="Hand" type="RigidBody2D" parent="."]
 position = Vector2( 512, 122 )
